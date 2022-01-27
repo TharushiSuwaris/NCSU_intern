@@ -22,8 +22,15 @@
       if($count == 1) {
          //session_register("myusername");
          $_SESSION['login_user'] = $myusername;
-         
-         header("location: dashboard.php");
+         $sql = "SELECT uno FROM user WHERE uname = '$myusername' and password = '$mypassword'";
+         $result = mysqli_query($db,$sql);
+         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+         $uid = $row['uno'];
+
+         if($uid == '1'){
+          header("location: dashboard_admin.php");
+         }
+         else{ header("location: dashboard.php"); }
       }else {
          echo '<script>alert("Your Login Name or Password is invalid")</script>';
       }
