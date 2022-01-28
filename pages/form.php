@@ -10,9 +10,11 @@
     
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
 </head>
 <body>
   <!-- Nav bar section -->
@@ -31,48 +33,64 @@
       </ul>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
+
   </nav>
 
-  <div class="container" style="padding: 5% 0;">
-      <div class="row">
-          <div class="col l12">
-            <form class="col s12">
+  <!-- forum section -->
+    <div class="container" style="padding: 5% 0;">
+        <div class="row">
+            <div class="col l12">
+              <form class="col s12" action="upload.php" method="post" enctype="multipart/form-data">
               <div class="row">
-                <div class="input-field col s6">
-                  <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                  <label for="first_name">First Name</label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="last_name" type="text" class="validate">
-                  <label for="last_name">Last Name</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-                  <label for="disabled">Disabled</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="password" type="password" class="validate">
-                  <label for="password">Password</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="email" type="email" class="validate">
-                  <label for="email">Email</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12">
-                  This is an inline input field:
-                  <div class="input-field inline">
-                    <input id="email_inline" type="email" class="validate">
-                    <label for="email_inline">Email</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                  <div class="input-field col s6">
+                    <input id="firstname" type="text" class="validate" name="firstname" required>
+                    <label for="firstname">First Name</label>
                   </div>
+                  <div class="input-field col s6">
+                    <input id="lastname" type="text" class="validate" name="lastname" required>
+                    <label for="lastname">Last Name</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="regno" type="text" class="validate" name="regno" required>
+                    <label for="regno">Registration Number</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="faculty" type="text" class="validate" name="faculty" required>
+                    <label for="faculty">Faculty</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="jobtitle" type="text" class="validate" name="jobtitle" required>
+                    <label for="jobtitle">Job Title</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="department" type="text" class="validate" name="department" required>
+                    <label for="department">Department</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" name="email" required>
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p class="profpic">Profile Picture</p> 
+                    <input type="file" name="file" id="file" required>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="submit" name="submit" id="submit" value="Upload">
+                    </div>
                 </div>
               </div>
             </form>
