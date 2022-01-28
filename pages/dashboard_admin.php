@@ -39,49 +39,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
+    <!-- compiled and minified jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
+
 <body>
     <nav class="blue"> <!-- navbar content here  -->
-        <a href="#" data-target="slide-out" class="sidenav-trigger " style="display: block;"><i class="material-icons">menu</i></a>
-        <a href="logout.php" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-log-out"></span> Log out
-        </a>
-        <a href="#addUser" class="btn btn-info btn-lg modal-trigger">
-          <span class="glyphicon glyphicon-log-out"></span> Add User
-        </a>
-    </nav>
-    <!-- <nav>
         <div class="nav-wrapper">
-        <form>
-            <div class="input-field">
-            <input id="search" type="search" required>
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
-            </div>
-        </form>
+            <a href="" class="brand-logo"><i class="material-icons">manage_accounts</i>Admin Dashboard</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="#addUser" class="btn btn-info btn-lg modal-trigger"><span class="glyphicon glyphicon-log-out"></span> Add User</a>
+                </li>
+                <li>
+                    <a href="logout.php" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-out"></span> Log out</a>
+                </li>
+            </ul>
         </div>
-    </nav> -->
-
-    <ul id="slide-out" class="sidenav">
-        <li><div class="user-view">
-        <div class="background">
-            <img src="https://www.citizencider.com/wp-content/uploads/2019/01/placeholder.jpg">
-        </div>
-        <a href="#user"><img class="circle" src="https://montgomeryii.com/wp-content/uploads/2019/01/Employee-Placeholder-Image.jpg"></a>
-        <a href="#name"><span class="white-text name">John Doe</span></a>
-        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-        </div></li>
-        <li><a href="form.php"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-        <li><a href="#!">Second Link</a></li>
-        <li><div class="divider"></div></li>
-        <li><a class="subheader">Subheader</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-    </ul>
+    </nav>
 
     <table class="centered highlight responsive-table">
         <thead>
@@ -127,6 +105,7 @@
             ?>
         </tbody>
     </table>
+
     <div class="modal" id="addUser">
         <div class="modal-content">
             <h4> Add User</h4>
@@ -173,7 +152,6 @@
         </div>
     </div>
 
-    <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
     <script>
         $(document).ready(function(){
             $('.sidenav').sidenav();
