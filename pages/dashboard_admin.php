@@ -17,11 +17,10 @@
         $sql = "INSERT INTO `user` (`uname`, `password`, `fno`, `remarks`, `active`, `utype`) VALUES ('$myusername', '$mypassword', '$myfno', '$myremarks', '$active', '$utype');";
 
         if(mysqli_query($db,$sql)){
-            echo "New record created successfully";
-            header("location: dashboard_admin.php");
+            echo '<script>alert("New record created successfully")</script>';
         }
         else{
-            echo "Error";
+            echo '<script>alert("Error occured while entering data")</script>';
         }
    }
 ?>
@@ -54,9 +53,6 @@
         </a>
         <a href="#addUser" class="btn btn-info btn-lg modal-trigger">
           <span class="glyphicon glyphicon-log-out"></span> Add User
-        </a>
-        <a href="#delUser" class="btn btn-info btn-lg modal-trigger">
-          <span class="glyphicon glyphicon-log-out"></span> Delete User
         </a>
     </nav>
     <!-- <nav>
@@ -107,21 +103,24 @@
 
                 if($count>0){
                     while ($row = $result->fetch_assoc()){
+                        $userid = $row['uno'];
                         $uname = $row['uname'];
                         $password = $row['password'];
                         $fno = $row['fno'];
                         $remarks = $row['remarks'];
                         $active = $row['active'];
                         $utype = $row['utype'];
-
-                        echo "<tr>
-                                <td> $uname </td>
-                                <td> $password </td>
-                                <td> $fno </td>
-                                <td> $remarks </td>
-                                <td> $active </td>
-                                <td> $utype </td>
-                            </tr>";
+            ?>
+                        <tr>
+                            <td> <?php echo "$uname" ?> </td>
+                            <td> <?php echo "$password" ?> </td>
+                            <td> <?php echo "$fno" ?> </td>
+                            <td> <?php echo "$remarks" ?> </td>
+                            <td> <?php echo "$active" ?> </td>
+                            <td> <?php echo "$utype" ?> </td>
+                            <td><a href="delete-process.php?userid=<?php echo $userid; ?>" class="waves-effect waves-light btn">Delete</a></td>
+                        </tr>
+            <?php            
                     }
                     $result->free();
                 }
@@ -133,60 +132,53 @@
             <h4> Add User</h4>
             <form class="col s12" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                 
-                    <div class="input-field inline">
-                        <input placeholder="Jonathan12" id="username" name="username" type="text" class="validate" required>
-                        <label for="username">Username</label>
-                    </div>
+                <div class="input-field inline">
+                    <input placeholder="Jonathan12" id="username" name="username" type="text" class="validate" required>
+                    <label for="username">Username</label>
+                </div>
 
-                    <div class="input-field inline">
-                        <input id="password" name="password" type="password" class="validate" placeholder="Password" required>
-                        <label for="password">Password</label>
-                    </div>
+                <div class="input-field inline">
+                    <input id="password" name="password" type="password" class="validate" placeholder="Password" required>
+                    <label for="password">Password</label>
+                </div>
 
-                    <div class="input-field inline">
-                        <input id="fno" name="facultynumber" type="number" class="validate" placeholder="1 - 11" min=1 max=11 required>
-                        <label for="fno">Fac. No</label>
-                    </div>
+                <div class="input-field inline">
+                    <input id="fno" name="facultynumber" type="number" class="validate" placeholder="1 - 11" min=1 max=11 required>
+                    <label for="fno">Fac. No</label>
+                </div>
 
-                    <div class="input-field inline">
-                        <input id="active" name="active" type="number" class="validate" placeholder="0 or 1" min=0 max=1 required>
-                        <label for="active">Active</label>
-                    </div>
+                <div class="input-field inline">
+                    <input id="active" name="active" type="number" class="validate" placeholder="0 or 1" min=0 max=1 required>
+                    <label for="active">Active</label>
+                </div>
 
-                    <div class="input-field inline">
-                        <input id="usertype" name="usertype" type="text" class="validate" placeholder="">
-                        <label for="usertype">User Type</label>
+                <div class="input-field inline">
+                    <input id="usertype" name="usertype" type="text" class="validate" placeholder="">
+                    <label for="usertype">User Type</label>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="remarks" name="remarks" type="text" class="validate">
+                        <label for="remarks">Remarks</label>
                     </div>
-                    
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="remarks" name="remarks" type="text" class="validate">
-                            <label for="remarks">Remarks</label>
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="row">
-                        <div class="input-field col s12 center">
-                            <input  value="Submit" class="btn" type="submit" class="validate">
-                        </div>
+                <div class="row">
+                    <div class="input-field col s12 center">
+                        <input  value="Submit" class="btn" type="submit" class="validate">
                     </div>
+                </div>
             </form>
         </div>
     </div>
-    
-
 
     <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
     <script>
         $(document).ready(function(){
-        $('.sidenav').sidenav();
-    });
-    </script>
-
-    <script>
-        $(document).ready(function(){
+            $('.sidenav').sidenav();
             $('.modal').modal();
-        });
+    });
     </script>
 
 <!-- Hello Super Admin -->
