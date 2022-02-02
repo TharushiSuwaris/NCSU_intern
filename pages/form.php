@@ -84,6 +84,9 @@
                 </div>
                 <div>
                     <p class="profpic">Profile Picture</p> 
+                <div>
+                <br>
+                <p class="profpic">Profile Picture</p> 
                 </div>
                 <div class="row" style="padding-bottom:0px;">               
                   <div class="input-field col s12" >                  
@@ -97,7 +100,7 @@
                 </div>
                 <div class="row">
                   <div class="input-field col s12">
-                    <input type="submit" name="submit" id="submit" value="Upload">
+                    <input type="submit" name="submit"  class="btn" id="submit" value="Upload">
                     </div>
                 </div>
               </div>

@@ -1,0 +1,29 @@
+.profpic{
+    font-size:1rem;
+    color:rgba(112, 112, 112, 0.7);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+  }
+
+  .choosefile{
+      visibility: hidden;
+      color: rgb(243, 239, 239);
+  }
+  #file{
+      color: white;
+  }
+  .choosefile + .btn1 {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(3, 160, 121);
+    display: inline-block;
+}
+
+.choosefile:focus + .btn1,
+.choosefile + .btn1:hover {
+    background-color: rgb(42, 240, 174);
+}
+
+#file-uploader{
+    color: rgb(2, 163, 115);
+}
