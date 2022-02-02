@@ -11,6 +11,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -81,11 +82,18 @@
                     <label for="email">Email</label>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="input-field col s12">
+                <div>
                     <p class="profpic">Profile Picture</p> 
-                    <input type="file" name="file" id="file" required>
-                    </div>
+                </div>
+                <div class="row" style="padding-bottom:0px;">               
+                  <div class="input-field col s12" >                  
+                    <input type="file" class="choosefile" name="file" id="file" accept=".jpg,.png.jpeg" required />
+                    <label class="btn" for="file" id="file">Choose a File</label>
+                  </div>
+                </div>
+                
+                <div id="file-uploader" style="padding-bottom:10%">
+                  
                 </div>
                 <div class="row">
                   <div class="input-field col s12">
@@ -106,6 +114,16 @@
   $(document).ready(function(){
     $('.sidenav').sidenav();
   });
+</script>
+<script type="text/javascript">
+  var input = document.getElementById('file');
+  var infoArea = document.getElementById('file-uploader');
+  input.addEventListener('change',showFileName);
+  function showFileName( event ) {
+    var input = event.srcElement;
+    var fileName = input.files[0].name;
+    infoArea.textContent = fileName;
+}
 </script>
 </body>
 </html>
