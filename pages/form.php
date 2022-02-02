@@ -82,7 +82,8 @@
                     <label for="email">Email</label>
                   </div>
                 </div>
-               
+                <div>
+                    <p class="profpic">Profile Picture</p> 
                 <div>
                 <br>
                 <p class="profpic">Profile Picture</p> 
