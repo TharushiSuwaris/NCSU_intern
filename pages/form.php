@@ -83,7 +83,7 @@
                   </div>
                 </div>
                 <div>
-                    <p class="profpic">Profile Picture</p> 
+                    <p class="profpic">Profile Picture</p>  
                 </div>
                 <div class="row" style="padding-bottom:0px;">               
                   <div class="input-field col s12" >                  
@@ -93,6 +93,7 @@
                 </div>
                 
                 <div id="file-uploader" style="padding-bottom:10%"></div>
+
                 <div class="row">
                   <div class="input-field col s12">
                     <input type="submit" name="submit"  class="btn" id="submit" value="Upload">
